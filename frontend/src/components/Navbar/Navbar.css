@@ -18,10 +18,44 @@
 	font-size: 18px;
 }
 
+
+
+/* .navbar-menu li {
+	text-transform: uppercase;
+	cursor: pointer;
+	position: relative;
+}
+
+.navbar-menu li:hover::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 4px;
+	background-color: #f68345;
+	left: 0;
+	bottom: -5px;
+	transition: 0.7s;
+} */
+
 .navbar-menu li {
 	text-transform: uppercase;
 	cursor: pointer;
-	margin-bottom: 5px;
+	position: relative;
+}
+
+.navbar-menu li::after {
+	content: '';
+	position: absolute;
+	width: 0%;
+	height: 3px;
+	background-color: #f68345;
+	left: 0;
+	bottom: -5px;
+	transition: width 0.4s ease-out;
+}
+
+.navbar-menu li:hover::after {
+	width: 100%;
 }
 
 
@@ -47,8 +81,11 @@
 }
 
 .navbar .active {
-	padding-bottom: 2px;
-	border-bottom: 2px solid #49557e;
+	background-color: #f68345;
+	border-radius: 5px;
+	color: rgb(255, 255, 255);
+	padding: 5px;
+	border-radius: 5px;
 }
 
 .navbar-search-icon {
