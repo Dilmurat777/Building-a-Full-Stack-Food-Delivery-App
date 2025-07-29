@@ -1,16 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { assets } from '../../assets/assets';
 import './Navbar.css';
 
 const Navbar = () => {
 	const [menu, setMenu] = useState('home')
+	const [scrollDown, setScrollDown] = useState(false)
 
 	const handleMenu = (menuList) => {
 		setMenu(menuList)
 	}
 
+	useEffect(() => {
+		window.addEventListener('scroll', () => {
+			window.scrollY > 60 ? setScrollDown(true) : setScrollDown(false)
+		})
+	}, [])
+
+
   return (
-	<div className='navbar'>
+	<div className={`navbar ${scrollDown ? 'dark-nav' : ''}`}>
 		  <img src={assets.logo} alt="" className='logo' />
 		  <ul className='navbar-menu'>
 			<li onClick={() => handleMenu('home')} className={menu === 'home' ? 'active' : ''}>home</li>
