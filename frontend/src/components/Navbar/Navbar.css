@@ -1,103 +1,95 @@
 .navbar {
-	padding: 20px 0;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .navbar .logo {
-	width: 150px;
+  width: 150px;
 }
 
 .navbar-menu {
-	display: flex;
-	align-items: center;
-	gap: 20px;
-	color: #49557e;
-	list-style: none;
-	font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #49557e;
+  list-style: none;
+  font-size: 18px;
 }
-
-
-
-/* .navbar-menu li {
-	text-transform: uppercase;
-	cursor: pointer;
-	position: relative;
-}
-
-.navbar-menu li:hover::after {
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 4px;
-	background-color: #f68345;
-	left: 0;
-	bottom: -5px;
-	transition: 0.7s;
-} */
 
 .navbar-menu li {
-	text-transform: uppercase;
-	cursor: pointer;
-	position: relative;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
 }
 
 .navbar-menu li::after {
-	content: '';
-	position: absolute;
-	width: 0%;
-	height: 3px;
-	background-color: #f68345;
-	left: 0;
-	bottom: -5px;
-	transition: width 0.4s ease-out;
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background-color: #f68345;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.4s ease-out;
 }
 
 .navbar-menu li:hover::after {
-	width: 100%;
+  width: 100%;
 }
 
-
 .navbar-right {
-	display: flex;
-	align-items: center;
-	gap: 40px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 
 .navbar-right button {
-	background: transparent;
-	border-radius: 50px;
-	border: 1px solid tomato;
-	padding: 10px 30px;
-	cursor: pointer;
-	font-size: 16px;
-	color: #49557e;
-	transition: 0.3s
+  background: transparent;
+  border-radius: 50px;
+  border: 1px solid tomato;
+  padding: 10px 30px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #49557e;
+  transition: 0.3s;
 }
 
 .navbar-right button:hover {
-	background-color: #fff4f2;
+  background-color: #fff4f2;
 }
 
 .navbar .active {
-	background-color: #f68345;
-	border-radius: 5px;
-	color: rgb(255, 255, 255);
-	padding: 5px;
-	border-radius: 5px;
+  background-color: #f68345;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .navbar-search-icon {
-	position: relative;
+  position: relative;
 }
 
 .navbar-search-icon .dot {
-	min-width: 10px;
-	min-height: 10px;
-	background-color: tomato;
-	border-radius: 5px;
-	position: absolute;
-	top: -8px;
-	right: -8px;
+  min-width: 10px;
+  min-height: 10px;
+  background-color: tomato;
+  border-radius: 5px;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+}
+
+.dark-nav {
+  color: #fff4f2;
+  background-color: rgb(0 0 0 / 30%);
+  backdrop-filter: blur(10px);
 }
