@@ -50,3 +50,17 @@
 	background-color: gray;
 	border: none;
 }
+
+/*******media queries *******/
+
+@media (max-width: 768px) {
+
+  .footer {
+  padding: 15px 8vw;
+}
+  .footer-content {
+ display: flex;
+ flex-direction: column;
+ gap: 35px;
+}
+}
