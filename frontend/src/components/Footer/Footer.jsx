@@ -3,7 +3,7 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className="footer" id="contacts">
       <div className="footer-content">
         <div className="footer-content-left">
           <img src={assets.logo} alt="" />
@@ -34,9 +34,11 @@ const Footer = () => {
             <li>mrDilmurat777@gmail.com</li>
           </ul>
         </div>
-		  </div>
-		  <hr />
-		  <p className="footer-copyright">Copyright &copy; 2025 mrDilmurat777@gmail.com - All Right Reserved</p>
+      </div>
+      <hr />
+      <p className="footer-copyright">
+        Copyright &copy; 2025 mrDilmurat777@gmail.com - All Right Reserved
+      </p>
     </div>
   );
 };
