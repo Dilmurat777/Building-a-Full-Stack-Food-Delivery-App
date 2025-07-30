@@ -3,7 +3,7 @@ import { assets } from '../../assets/assets';
 import './Navbar.css';
 import { AlignJustify, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-const Navbar = () => {
+const Navbar = ({setShowLogin}) => {
   const [menu, setMenu] = useState('home');
   const [scrollDown, setScrollDown] = useState(false);
   const [activeIcon, setActiveIcon] = useState(false);
@@ -64,7 +64,7 @@ const Navbar = () => {
           <img src={assets.basket_icon} alt="" />
           <div className="dot"></div>
         </div>
-        <button>sign in</button>
+        <button onClick={() => setShowLogin(true)}>sign in</button>
         <div onClick={() => setActiveIcon(!activeIcon)}>
           <AlignJustify className="navbar-menu-icon" />
         </div>
