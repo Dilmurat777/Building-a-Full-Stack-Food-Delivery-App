@@ -31,3 +31,16 @@ a {
     opacity: 1;
   }
 }
+
+/*******media queries *******/
+
+@media (max-width: 656px) {
+  .app {
+    width: 85%;
+  }
+}
+@media (max-width: 450px) {
+  .app {
+    width: 90%;
+  }
+}
