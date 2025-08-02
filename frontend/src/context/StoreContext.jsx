@@ -1,9 +1,22 @@
 import { createContext, useState } from 'react';
-import { food_list } from '../assets/assets';
+import axios from 'axios'
+import { useEffect } from 'react';
 
 export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
+
+  const [list, setList] = useState([]);
+
+
+    const url = 'http://localhost:4000';
+
+  const fetchList = async () => {
+    const response = await axios.get(`${url}/api/food/list`);
+
+    setList(response.data.data);
+  };
+  
 
   const addToCart = (itemId) => {
     if (!cartItems[itemId]) {
@@ -21,15 +34,19 @@ const StoreContextProvider = (props) => {
     let totalAmount = 0;
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
-        let itemInfo = food_list.find((pro) => pro._id === item);
+        let itemInfo = list.find((pro) => pro._id === item);
         totalAmount += itemInfo.price * cartItems[item];
       }
     }
     return totalAmount
   };
 
+
+  useEffect(() => {
+    fetchList()
+  }, [])
   const contextValue = {
-    food_list,
+    list,
     cartItems,
     setCartItems,
     addToCart,
