@@ -8,6 +8,7 @@ import { useState } from 'react';
 import LoginPopup from './components/LoginPopup/LoginPopup';
 
 const App = () => {
+    const url = 'http://localhost:4000';
   const [showLogin, setShowLogin] = useState(false)
   return (
     <>
@@ -16,8 +17,8 @@ const App = () => {
       <Navbar setShowLogin={ setShowLogin} />
       <div className="app">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/" element={<Home url={url} />} />
+          <Route path="/cart" element={<Cart url={url} />} />
           <Route path="/order" element={<PLaceOrder />} />
         </Routes>
       </div>
