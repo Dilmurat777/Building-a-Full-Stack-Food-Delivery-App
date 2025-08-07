@@ -6,6 +6,7 @@ import PLaceOrder from './pages/PlaceOrder/PLaceOrder';
 import Footer from './components/Footer/Footer';
 import { useState } from 'react';
 import LoginPopup from './components/LoginPopup/LoginPopup';
+import Verify from './pages/Verify/Verify';
 
 const App = () => {
     const url = 'http://localhost:4000';
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/" element={<Home url={url} />} />
           <Route path="/cart" element={<Cart url={url} />} />
           <Route path="/order" element={<PLaceOrder />} />
+          <Route path="/verify" element={<Verify />} />
         </Routes>
       </div>
       <Footer />
