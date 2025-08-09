@@ -54,27 +54,36 @@ const verifyOrder = async (req, res) => {
     if (success === 'true') {
       await orderModel.findByIdAndUpdate(orderId, { payment: true });
       res.json({ success: true, message: 'Paid Successfully' });
-	} else {
-		await orderModel.findByIdAndUpdate(userId);
-		res.json({ success: false, message: "Payment Failed" });
-	  }
-	  
+    } else {
+      await orderModel.findByIdAndUpdate(userId);
+      res.json({ success: false, message: 'Payment Failed' });
+    }
   } catch (error) {
-	  console.log(error);
-	  res.json({ success: false, message: 'Error' });
-	  
+    console.log(error);
+    res.json({ success: false, message: 'Error' });
   }
 };
 
 const userOrders = async (req, res) => {
   try {
     const orders = await orderModel.find({ userId: req.userId });
-    res.json({ success: true, data:orders });
+    res.json({ success: true, data: orders });
   } catch (error) {
     console.log(error);
-    res.json({success: false, message: 'Error'})
-    
+    res.json({ success: false, message: 'Error' });
   }
-}
+};
 
-export { placeOrder, verifyOrder, userOrders };
+//List orders for admin panel
+
+const listOrders = async (req, res) => {
+  try {
+    const orders = await orderModel.find({});
+    res.json({ success: true, data: orders });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: 'Error' });
+  }
+};
+
+export { placeOrder, verifyOrder, userOrders, listOrders };
