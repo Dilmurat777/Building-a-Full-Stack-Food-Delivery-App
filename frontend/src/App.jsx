@@ -7,6 +7,7 @@ import Footer from './components/Footer/Footer';
 import { useState } from 'react';
 import LoginPopup from './components/LoginPopup/LoginPopup';
 import Verify from './pages/Verify/Verify';
+import MyOrders from './pages/MyOrders/MyOrders';
 
 const App = () => {
     const url = 'http://localhost:4000';
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/cart" element={<Cart url={url} />} />
           <Route path="/order" element={<PLaceOrder />} />
           <Route path="/verify" element={<Verify />} />
+          <Route path="/myorders" element={<MyOrders />} />
         </Routes>
       </div>
       <Footer />
